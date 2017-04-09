@@ -32,12 +32,11 @@
 		},
 		methods: {
 			wp: function () {
-				var self = this;
-				api.posts().page(self.page).then(function(data) {
+				api.posts().page(this.page).then( data =>{
 					console.log(data);
-					self.posts = data;
+					this.posts = data;
 					return data;
-				}).catch(function(err) {
+				}, err => {
 					console.log(err);
 				});
 			}

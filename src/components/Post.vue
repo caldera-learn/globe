@@ -27,12 +27,11 @@
 		},
 		methods: {
 			wp: function () {
-				var self = this;
-				api.posts().slug(self.slug).then(function(data) {
+				api.posts().slug(self.slug).then( data => {
 					console.log(data);
-					self.post = data[0];
+					this.post = data[0];
 					return data;
-				}).catch(function(err) {
+				}, err => {
 					console.log(err);
 				});
 			}
